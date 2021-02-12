@@ -2,12 +2,12 @@
 
 ## users テーブル
 
-| Column             | Type    | Options     |
-| ------------------ | ------- | ----------- |
-| name               | string  | null: false |
-| prefecture_id      | integer | null: false |
-| email              | string  | null: false |
-| encrypted_password | string  | null: false |
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| name               | string | null: false |
+| area               | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
 
 ### Association
 
@@ -16,15 +16,15 @@
 
 ## results テーブル
 
-| Column        | Type       | Options           |
-| ------------- | ---------- | ----------------- |
-| title         | string     | null: false       |
-| length        | string     |                   |
-| weight        | string     |                   |
-| prefecture_id | integer    |                   |
-| means_id      | integer    |                   |
-| text          | text       | null: false       |
-| user          | references | foreign_key: true |
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| title  | string     | null: false       |
+| length | string     |                   |
+| weight | string     |                   |
+| area   | string     |                   |
+| means  | string     |                   |
+| text   | text       | null: false       |
+| user   | references | foreign_key: true |
 
 ### Association
 

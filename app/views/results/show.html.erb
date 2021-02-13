@@ -9,8 +9,8 @@
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示 %>
         <% if user_signed_in? && current_user.id == @result.user_id %>
           <div class="prototype__manage">
-            <%= link_to "編集する", root_path, class: :prototype__btn %>
-            <%= link_to "削除する", root_path, class: :prototype__btn %>
+            <%= link_to "編集する", edit_result_path(@result), class: :prototype__btn %>
+            <%= link_to "削除する", result_path(@result.id),  method: :delete, class: :prototype__btn %>
           </div>
         <% end %>
 
@@ -64,6 +64,7 @@
             </p>
         </div>
       </div>
+
       <% if user_signed_in? %>
         <div class="prototype__comments">
           <%# ログインしているユーザーには以下のコメント投稿フォームを表示 %>
@@ -80,6 +81,7 @@
       <% else %>
         <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
+
       <div>
         <ul class="comments_lists">
           <li class="comments_list">

@@ -182,12 +182,28 @@ a {
   margin: 0 auto;
   padding: 16px 0;
 }
+
+.prototype__body{
+  display: flex;
+  justify-content: space-around;
+}
+
 .prototype__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 8px;
 }
+
+.prototype__body__under{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.prototype__messages{
+}
+
 .detail__title{
   font-size: 20px;
   font-weight: bold;
@@ -215,9 +231,12 @@ a {
 }
 
 .prototype__comments{
-  background-color: #f6f6f6;
+  /* background-color: #f6f6f6; */
   padding: 20px;
   margin: 28px 0 40px 0;
+}
+
+.field{
 }
 
 .comments_lists{

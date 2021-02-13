@@ -1,5 +1,5 @@
 <div class="card">
-<%= link_to image_tag( result.image.variant(resize: '300x200'), class: :card__img ) %>
+<%= link_to image_tag( result.image.variant(resize: '300x200'), class: :card__img ), result_path(result[:id]) %>
   <div class="card__body">
     <%# <%= link_to "プロトタイプのタイトル", root_path, class: :card__title%>
     <p class="card__summary">
@@ -12,7 +12,7 @@
         <%= " ~ #{result.second_weight} " if result.second_weight.present? %>
         <%=" g " %><br>
       <% else %>
-        <br>
+        <%= "ウェイト : -----" %>
       <% end%>
     </p>
     <%= link_to "投稿者 : #{result.user.name}", root_path, class: :card__user %>

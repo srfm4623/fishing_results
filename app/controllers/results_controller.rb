@@ -1,4 +1,6 @@
 class ResultsController < ApplicationController
+before_action :set_params, only: [:show, :edit, :update, :destroy]
+
   def index
     # binding.pry
     @results = Result.all
@@ -18,13 +20,30 @@ class ResultsController < ApplicationController
   end
 
   def show
-    @result = Result.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+    if @result.update(result_params)
+      redirect_to result_path(@result)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @result.destroy
+    redirect_to root_path
+  end
 
   private
   def result_params
     params.require(:result).permit(:first_length, :second_length, :first_weight, :second_weight, :area, :means, :text,:image).merge(user_id: current_user.id)
   end
 
+  def set_params
+    @result = Result.find(params[:id])
+  end
 end

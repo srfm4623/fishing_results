@@ -6,6 +6,7 @@ class Result < ApplicationRecord
 
   with_options presence: true do
     validates :image
+    validates :first_length
   end
   
 end

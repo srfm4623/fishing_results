@@ -10,7 +10,8 @@
     <% end %>
 
     <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%# 部分テンプレートで釣果投稿一覧を表示 %>
+      <%= render partial: "result", collection: @results %>
     </div>
   </div>
 </main>
